@@ -7,7 +7,7 @@
 #    site_name: www.testsite.com
 
   tasks:
-    - name: Download Latest WordPress Package
+    - name: Install Let'sEncrypt SSL Certificate to Site
       command: certbot --{{ site_app }} -d {{ site_name }} -n
       become: true
 
