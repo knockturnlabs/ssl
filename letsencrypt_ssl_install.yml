@@ -1,0 +1,13 @@
+---
+- name: Assign Let'sEncrypt SSL to Site
+  hosts: "{{ host_name }}"
+  gather_facts: no
+#  vars:
+#    site_app: apache
+#    site_name: www.testsite.com
+
+  tasks:
+    - name: Download Latest WordPress Package
+      command: certbot --{{ site_app }} -d {{ site_name }} -n
+      become: true
+
